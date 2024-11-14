@@ -40,6 +40,19 @@
 
 \newcommand{\pojem}[1]{\emph{\color{purple}#1}}
 
+\newenvironment{magic}[3]{
+   \begin{table}[!ht]
+      \centering
+      \caption{#2}
+      \label{#3}
+      \large
+      \begin{tabular}{|*{#1}{c|}}\hline
+}{
+      \end{tabular}
+      \normalsize
+   \end{table}
+}
+
 \maketitle
 
 % 2. naloga
@@ -94,6 +107,7 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli \ref{table:mag3}.
       3 & 5 & 7 \\\hline
       4 & 9 & 2 \\\hline
    \end{tabular}
+   \normalsize
    \label{table:mag3}
 \end{table}
 
@@ -129,9 +143,12 @@ reke.
 % - napis nad tabelo: Kvadrat Lo Shu
 % - oznaka: table:loshu
 % Začetek magičnega kvadrata
-%   4 & 9 & 2 \\\hline
-%   3 & 5 & 7 \\\hline
-%   8 & 1 & 6 \\\hline
+  \begin{magic}{3}{Kvadrat Lo Shu}{table:loshu}
+  
+  4 & 9 & 2 \\\hline
+  3 & 5 & 7 \\\hline
+  8 & 1 & 6 \\\hline
+\end{magic} 
 % Konec magičnega kvadrata
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -150,9 +167,11 @@ Lo Shu, vendar je vsako število povečano za 19.
 % - napis nad tabelo: Kvadrat Kubera-Kolam
 % - oznaka: table:kubera
 % Konec magičnega kvadrata
-%   23 & 28 & 21 \\\hline
-%   22 & 24 & 26 \\\hline
-%   27 & 20 & 25 \\\hline
+\begin{magic}{3}{Kvadrat Kubera-Kolam}{table:kubera}
+     23 & 28 & 21 \\\hline
+   22 & 24 & 26 \\\hline
+   27 & 20 & 25 \\\hline
+\end{magic}
 % Konec magičnega kvadrata
 
 Z magičnimi kvadrati so se ukvarjali tudi najbolj znani matematiki kot na
@@ -270,9 +289,11 @@ komplementarni kvadrat, prikazan v tabeli ?!?.
 %
 % - napis nad tabelo: Kvadratu Lo Shu komplementarni kvadrat
 % - oznaka: ttable:closhu
-%   6 & 1 & 8 \\\hline
-%   7 & 5 & 3 \\\hline
-%   2 & 9 & 4 \\\hline
+\begin{magic}{3}{Kvadratu Lo Shu komplementarni kvadrat}{ttable:closhu}
+     6 & 1 & 8 \\\hline
+   7 & 5 & 3 \\\hline
+   2 & 9 & 4 \\\hline
+\end{magic}
 
 Vidimo, da je dobljeni kvadrat moč dobiti iz kvadrata Lo Shu tudi z zasukom za
 180 stopinj okrog središča, kvadrat iz tabele ?!? pa je mogoče dobiti
