@@ -1,11 +1,19 @@
-\documentclass[a4paper,12pt]{article}
+% \begin\documentclass[a4paper,12pt]{article}
 \usepackage[slovene]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-
+\usepackage{amsthm}
 \usepackage{url}
 \usepackage{graphicx}
+
+{\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}
+}
+
+{\theoremstyle{plain}
+\newtheorem{izrek}{Izrek}
+}
 
 % Nastavimo koliko prostora izpustimo pod napisom nad sliko ali tabelo.
 \setlength{\belowcaptionskip}{2mm}
@@ -59,12 +67,12 @@ Prirejeno iz virov:
 
 \section{Uvod}
 
-% \begin{definicija}
+\begin{definicija}
    \emph{Magični kvadrat} reda $n$ je nabor $n^2$ različnih števil,
    ki so razvrščena v kvadratno tabelo tako, da vedno dobimo enako vsoto,
    če seštejemo vsa števila poljubne vrstice, vsa števila poljubnega
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
-% \end{definicija}
+\end{definicija}
 
 Primer magičnega kvadrata reda 3 je prikazan v tabeli ?!?.
 
@@ -76,13 +84,13 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli ?!?.
 %   4 & 9 & 2 \\\hline
 % Konec magičnega kvadrata
 
-% \begin{definicija}
+\begin{definicija}
    Magični kvadrat reda $n$ je \emph{normalen}, če v njem nastopajo števila
    \begin{equation}
       % oznaka: eq:numbers
       1, 2, 3, \ldots, n^2-1, n^2.
    \end{equation}
-% \end{definicija}
+\end{definicija}
 
 Magični kvadrat v tabeli ?!? je normalen.
 To je tudi najmanjši netrivialen normalen magični kvadrat.
@@ -196,27 +204,33 @@ in zato kvadrat ni normalen.
 
 \section{Osnovne lastnosti}
 
-% \begin{definicija}
+\begin{definicija}
       Vsoto ene vrstice, enega stolpca ali ene od glavnih diagonal
       v magičnem kvadratu imenujemo \emph{magična konstanta}.
-% \end{definicija}
+\end{definicija}
 
-% Začetek okolja izrek
-   Magična konstanta normalnega magičnega kvadrata reda !!
-   je enaka
-   \begin{equation}
-      % oznaka: eq:mc
-      M_2(n) = \frac{1}{2} n(n^2+1)
-   \end{equation}
-% Konec okolja izrek
+   
+   \begin{izrek}
+      Magična konstanta normalnega magičnega kvadrata reda !!
+      je enaka
+      \begin{equation}
+         % oznaka: eq:mc
+         M_2(n) = \frac{1}{2} n(n^2+1)
+      \end{equation}
+   \end{izrek}
 
-% Začetek dokaza
-   V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
-   števil (glej ?? na strani ??) enaka
-   $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
-   v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
-   enaka številu $M_2(n)$. % sklica: eq:numbers, eq:numbers
-% Konec dokaza
+
+
+   
+   \begin{proof}[Dokaz izreka]
+      V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
+      števil (glej ?? na strani ??) enaka
+      $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
+      v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
+      enaka številu $M_2(n)$.
+   \end{proof} 
+   % sklica: eq:numbers, eq:numbers
+
 
 Preprost račun pokaže, da je konstanti ?? analogna konstanta
 $M_2(n;A,D)$ za magični kvadrat, v katerem so nameščena števila
@@ -224,11 +238,11 @@ $A$, $A+D$, $A+2D$, \dots, $A+(n^2-1)D$, enaka % sklic: eq:mc
 !!
 Kvadratu v tabeli ?!? ustrezata konstanti $A=20$ in $D=1$.
 
-% \begin{definicija}
+\begin{definicija}
       Če vsako od števil v normalnem magičnem kvadratu reda $n$ odštejemo
       od števila $n^2+1$, dobimo nov magični kvadrat, ki je prvotnemu
       \emph{komplementaren}.
-% \end{definicija}
+\end{definicija}
 
 Na primer, magičnemu kvadratu Lo Shu (glej tabelo ?!?) priredimo
 komplementarni kvadrat, prikazan v tabeli ?!?.
@@ -245,10 +259,10 @@ iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte.
 
 Število različnih normalnih magičnih kvadratov
 
-% \begin{definicija}
+\begin{definicija}
       Pravimo, da sta dva magična kvadrata \emph{različna}, če enega ni mogoče dobiti
       iz drugega s pomočjo zasukov oziroma zrcaljenj.
-% \end{definicija}
+\end{definicija}
 
 Števila različnih normalnih magičnih kvadratov se nahajajo v tabeli ??.
 % sklic: table:stevila
